@@ -19,6 +19,7 @@ const TVMainList = ({baseURL}) => {
     useEffect(() => {
         setPage(1)
         onRequest()
+        // eslint-disable-next-line
     }, [])
 
     const {getPopularTV} = MovieService()

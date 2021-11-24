@@ -19,6 +19,7 @@ const MainList = ({baseURL}) => {
     useEffect(() => {
         setPage(1)
         onRequest()
+        // eslint-disable-next-line
     }, [])
 
     const {getPopularMovies} = MovieService()

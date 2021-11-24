@@ -10,6 +10,7 @@ const NavBar = () => {
 
   useEffect(() => {
     getGenres().then((data) => setGernres(data));
+    // eslint-disable-next-line
   }, []);
 
   const { getGenres } = MovieService();
@@ -49,7 +50,7 @@ const NavBar = () => {
           type="button"
           onClick={() => (document.title = "Movies App")}
         >
-          Home page
+          Домашняя страница
         </Link>
         <Link
           to="/tv"
@@ -57,7 +58,7 @@ const NavBar = () => {
           type="button"
           onClick={() => (document.title = "TV shows")}
         >
-          TV Shows
+          Сериалы
         </Link>
         <div className="dropdown">
           <button

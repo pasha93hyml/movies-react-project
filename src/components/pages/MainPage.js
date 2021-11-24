@@ -27,7 +27,7 @@ const MainPage = () => {
         );
         setData(arr)
       });
-    });
+    });// eslint-disable-next-line
   }, [])
 
     return (

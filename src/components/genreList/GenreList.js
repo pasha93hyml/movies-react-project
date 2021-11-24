@@ -23,6 +23,7 @@ const GenreList = ({baseURL}) => {
 
     useEffect(() => {
         onRequest()
+        // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
@@ -33,6 +34,7 @@ const GenreList = ({baseURL}) => {
 
     useEffect(() => {
         onRequest()
+        // eslint-disable-next-line
     }, [genre])
 
     const {getMoviesByGenre} = MovieService()

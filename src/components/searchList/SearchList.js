@@ -12,7 +12,6 @@ const SearchList = ({baseURL}) => {
 
     const {query} = useParams()
 
-    const [value, setValue] = useState(query)
     const [loading, setLoading] = useState(true)
     const [newPageLoading, setNewPageLoading] = useState(false)
     const [error, setError] = useState(false)
@@ -22,18 +21,17 @@ const SearchList = ({baseURL}) => {
 
     useEffect(() => {
         onRequest()
+        // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
         setPage(1)
         setData([])
-        setValue(query)
         document.title = query[0].toUpperCase() + query.slice(1).toLowerCase()
+        return () => {
+            setPage(1)
+        }
     }, [query])
-
-    useEffect(() => {
-        onRequest()
-    }, [value])
 
     const {getSearchResults} = MovieService()
 

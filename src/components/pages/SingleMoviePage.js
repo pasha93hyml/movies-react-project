@@ -71,7 +71,7 @@ const SingleMoviePage = () => {
   const spinner = loading ? <Spinner /> : null;
   const content = !(loading || error || !moiveData || !reccomendationsData) ? (
     <ErrorBoundary>
-      <View data={moiveData} baseURL={baseURL} reccomendationsData={reccomendationsData} moviesData={moviesData}/>
+      <View data={moiveData} baseURL={baseURL} reccomendationsData={reccomendationsData} moviesData={moviesData} loading={loading}/>
     </ErrorBoundary>
   ) : null;
 
@@ -84,7 +84,7 @@ const SingleMoviePage = () => {
   );
 };
 
-const View = ({ data, baseURL, reccomendationsData, moviesData}) => {
+const View = ({ data, baseURL, reccomendationsData, moviesData, loading}) => {
   const player = (moviesData && moviesData.length) ? (
           <iframe 
           src={`https://www.youtube.com/embed/${moviesData[0].key}`} title="YouTube video player" 
@@ -150,7 +150,7 @@ const View = ({ data, baseURL, reccomendationsData, moviesData}) => {
         <div className="carousel_rec">
           <p>Реккомендации</p>
           {reccomendationsData.length ? (
-            <RecommendationsCarousel data={reccomendationsData} baseURL={baseURL} from="movie"/>
+            <RecommendationsCarousel data={reccomendationsData} baseURL={baseURL} from="movie" loading={loading}/>
           ): <p>Нет реккомендаций</p>}
         
         </div>

@@ -12,6 +12,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     getConfiguration().then(({ base_url, poster_sizes }) => setBaseURL(`${base_url}${poster_sizes[5]}`))
+    // eslint-disable-next-line
   }, [])
 
   return (

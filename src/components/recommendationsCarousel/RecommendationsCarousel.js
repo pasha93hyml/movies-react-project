@@ -6,8 +6,12 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const RecommendationsCarousel = ({ data, baseURL, from }) => {
   const renderItems = (items) => {
-    return items.map((item, i) => (
-      <Link to={`/${from}/${item.id}`} key={item.id} style={{textDecoration: 'none', color: '#fff'}}>
+    return items.map((item) => (
+      <Link
+        to={`/${from}/${item.id}`}
+        key={item.id}
+        style={{ textDecoration: "none", color: "#fff" }}
+      >
         <div className="item">
           <img
             src={
@@ -17,7 +21,7 @@ const RecommendationsCarousel = ({ data, baseURL, from }) => {
             }
             alt=""
             height={300}
-            style={{objectFit: 'cover'}}
+            style={{ objectFit: "cover" }}
           />
           <p>{item.title}</p>
         </div>

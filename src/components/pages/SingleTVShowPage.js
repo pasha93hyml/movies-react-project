@@ -32,7 +32,7 @@ const SingleTVShowPage = () => {
   useEffect(() => {
     getConfiguration().then(({ base_url, poster_sizes }) =>
       setBaseURL(`${base_url}${poster_sizes[5]}`)
-    )
+    )// eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -40,7 +40,11 @@ const SingleTVShowPage = () => {
     getTVShowReccomendations(tvshowID).then(onReccomendationsLoaded);
   console.log(tvshowID);
   getTVShowVideos(tvshowID).then(onMoviesLoaded)
-
+    return () => {
+      setTvshowData(null)
+      setReccomendationsData(null)
+      setMoviesData(null)
+    }// eslint-disable-next-line
   }, [tvshowID]);
 
   const updateMovie = () => {
