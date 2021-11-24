@@ -9,7 +9,8 @@ import {
   GenrePage,
   SingleMoviePage,
   TVShowsMainPage,
-  SingleTVShowPage
+  SingleTVShowPage,
+  Page404
 } from "../pages";
 import "./App.css";
 
@@ -39,6 +40,9 @@ const App = () => {
           </Route>
           <Route exact path={"/tv/:tvshowID"}>
             <SingleTVShowPage/>
+          </Route>
+          <Route path="*">
+            <Page404/>
           </Route>
         </Switch>
       </div>

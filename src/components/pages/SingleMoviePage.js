@@ -42,6 +42,8 @@ const SingleMoviePage = () => {
     updateMovie();
     return () => {
       setMoviesData(null)
+      setMovieData(null)
+      setReccomendationsData(null)
     }
     // eslint-disable-next-line
   }, [movieID]);
